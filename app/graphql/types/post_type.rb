@@ -5,8 +5,9 @@ module Types
 		field :id, !types.Int
 		field :text, !types.String do 
 			resolve ->(obj,args,ctx){
-				obj.user.email + '-' + obj.text
+				obj.user.username + ' - ' + obj.user.email + ' - ' + obj.text
 			}
 		end
+		field :comment, !types.String
 	end
 end
